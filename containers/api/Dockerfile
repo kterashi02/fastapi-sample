@@ -21,12 +21,11 @@ RUN pip install --upgrade pip && \
 
 COPY ./src /src
 
-ENTRYPOINT [ "uvicorn", "app.main:app", "--host", "0.0.0.0", "--reload" ]
+CMD [ "uvicorn", "app.main:app", "--host", "0.0.0.0", "--reload" ]
 
 ##################################################
 # debug image
 ##################################################
 FROM local as debug
 
-CMD ["python3", "-m", "debugpy", "--listen", "0.0.0.0:5678", "-m", "uvicorn", "prog:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
-
+CMD ["python3", "-m", "debugpy", "--listen", "0.0.0.0:5678", "-m", "uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0"]

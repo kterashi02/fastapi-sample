@@ -1,6 +1,6 @@
 {  
   "name": "fastapi-sample",
-  "dockerComposeFile": ["../docker-compose.yaml"],
+  "dockerComposeFile": ["../../docker-compose.debug.yaml"],
   "service": "api",
   "workspaceFolder": "/src",
   "settings":{

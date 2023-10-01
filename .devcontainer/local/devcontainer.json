@@ -1,0 +1,41 @@
+{  
+  "name": "fastapi-sample",
+  "dockerComposeFile": ["../../docker-compose.yaml"],
+  "service": "api",
+  "workspaceFolder": "/src",
+  "settings":{
+		// mypy
+		"python.linting.pylintArgs": [
+			"--disable", "E1101,E0213,R0201",
+			"--extension-pkg-whitelist", "pydantic"
+		],
+		"python.pythonPath": "/usr/local/bin/python",
+		// format settings
+		"[python]": {
+      "editor.formatOnSave": true
+		},
+		// lint,mypy settings
+    "python.linting.mypyEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.mypyPath": "/usr/local/bin/mypy",
+    "python.linting.mypyArgs": ["--config=${containerWorkspaceFolder}/mypy.ini"],
+
+		"python.analysis.typeCheckingMode": "strict",
+		"python.analysis.diagnosticSeverityOverrides": {
+      "reportUnusedImport": "none",
+			"reportMissingTypeStubs": "none",
+			"reportUnknownParameterType": "none",
+  		"reportUnknownMemberType": "none",
+  		"reportUnknownArgumentType":  "none",
+			"reportUnknownVariableType": "none",
+			"reportUntypedBaseClass" : "none"
+		}
+  },
+	"extensions": [
+		"ms-python.python",
+    "njpwerner.autodocstring",
+    "mosapride.zenkaku",
+    "ms-python.vscode-pylance",
+		"ms-python.black-formatter"
+  ]
+}
