@@ -12,3 +12,4 @@ python-jose==3.3.0
 sqlalchemy-stubs==0.4
 python-multipart==0.0.6
 debugpy==1.8.0
+alembic==1.12.0
